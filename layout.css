@@ -1,0 +1,58 @@
+/* --- Centre and limit width ---
+   Applies to the main content blocks on every page. */
+.header-inner,
+.hero-inner,
+.section,
+.form-page,
+.footer-inner,
+.footer-bottom {
+    width: min(100% - 2rem, var(--max-width));
+    margin-inline: auto;
+}
+
+/* --- Header inner layout ---
+   Logo on the left, navigation on the right. */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+/* --- Hero two-column layout ---
+   Text on the left, image card on the right. */
+.hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+/* --- Contact page layout ---
+   Form takes 2/3 of the width, sidebar takes 1/3. */
+.contact-layout {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.contact-form-section { flex: 2; min-width: 280px; }
+.office-info          { flex: 1; min-width: 260px; }
+
+
+/* --- Responsive: Tablet (max 860px) ---
+   Collapses multi-column layouts to single column. */
+@media screen and (max-width: 860px) {
+    .header-inner, .hero-inner, .media-panel, .footer-inner { grid-template-columns: 1fr; }
+    .header-inner { display: grid; justify-items: start; }
+    .grid-3, .grid-2, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* --- Responsive: Mobile (max 560px) ---
+   Single column for all grids, buttons go full width. */
+@media screen and (max-width: 560px) {
+    .grid-3, .grid-2, .gallery { grid-template-columns: 1fr; }
+    .hero-actions, .form-actions { flex-direction: column; }
+    .btn-primary, .btn-secondary { width: 100%; }
+}

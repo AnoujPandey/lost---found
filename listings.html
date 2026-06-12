@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Items - Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header>
+        <div class="header-inner">
+            <a class="logo" href="index.html" aria-label="Campus Lost and Found home">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                    <circle cx="21" cy="21" r="13" fill="#eaf2ff" stroke="#1a73e8" stroke-width="4" />
+                    <path d="M31 31l9 9" stroke="#e84c1a" stroke-width="5" stroke-linecap="round" />
+                    <circle cx="21" cy="21" r="4" fill="#1a73e8" />
+                </svg>
+                <span>Campus Lost <strong>&amp; Found</strong></span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html" class="active">Items</a></li>
+                    <li><a href="report-lost.html">Report Lost</a></li>
+                    <li><a href="report-found.html">Report Found</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="section">
+        <section class="page-title-section">
+            <h1>Found Item Listings</h1>
+            <p>Browse sample records from the campus office. Each card uses images, alt text, semantic article markup,
+                and category tags.</p>
+        </section>
+
+        <section class="grid grid-3" aria-label="Found item cards">
+            <article class="card item-card">
+                <img src="media/backpack.jpeg" alt="Black backpack found near the library" width="640" height="480">
+                <div class="item-body">
+                    <h2>Black Backpack</h2>
+                    <p>Found near the library entrance after evening class.</p>
+                    <div class="tag-row"><span class="tag">Bag</span><span class="tag">Library</span><span
+                            class="tag">May 30</span></div>
+                    <a class="text-link" href="contact.html">Claim item</a>
+                </div>
+            </article>
+            <article class="card item-card">
+                <img src="media/earbuds.jpeg" alt="Wireless earbuds found in the cafeteria" width="640" height="480">
+                <div class="item-body">
+                    <h2>Wireless Earbuds</h2>
+                    <p>Found on a table in the cafeteria after lunch time.</p>
+                    <div class="tag-row"><span class="tag">Electronics</span><span class="tag">Cafeteria</span><span
+                            class="tag">May 29</span></div>
+                    <a class="text-link" href="contact.html">Claim item</a>
+                </div>
+            </article>
+            <article class="card item-card">
+                <img src="media/id.jpeg" alt="Student ID card found in building A" width="640" height="480">
+                <div class="item-body">
+                    <h2>Student ID Card</h2>
+                    <p>Found in Building A hallway and moved to the office.</p>
+                    <div class="tag-row"><span class="tag">ID</span><span class="tag">Building A</span><span
+                            class="tag">May 28</span></div>
+                    <a class="text-link" href="contact.html">Claim item</a>
+                </div>
+            </article>
+            <article class="card item-card">
+                <img src="media/keys.jpeg" alt="Keys found near the parking lot" width="640" height="480">
+                <div class="item-body">
+                    <h2>Key Bundle</h2>
+                    <p>Found near the parking lot entrance in the morning.</p>
+                    <div class="tag-row"><span class="tag">Keys</span><span class="tag">Parking Lot</span><span
+                            class="tag">May 31</span></div>
+                    <a class="text-link" href="contact.html">Claim item</a>
+                </div>
+            </article>
+            <article class="card item-card">
+                <img src="media/phone.jpeg" alt="Smartphone found in the library study room" width="640" height="480">
+                <div class="item-body">
+                    <h2>Smartphone</h2>
+                    <p>Found on a desk in the library study room after closing.</p>
+                    <div class="tag-row"><span class="tag">Electronics</span><span class="tag">Library</span><span
+                            class="tag">Jun 1</span></div>
+                    <a class="text-link" href="contact.html">Claim item</a>
+                </div>
+            </article>
+            <article class="card item-card">
+                <img src="media/wallet.jpeg" alt="Brown wallet found in the cafeteria" width="640" height="480">
+                <div class="item-body">
+                    <h2>Brown Wallet</h2>
+                    <p>Found under a chair in the cafeteria during lunch hour.</p>
+                    <div class="tag-row"><span class="tag">Wallet</span><span class="tag">Cafeteria</span><span
+                            class="tag">Jun 2</span></div>
+                    <a class="text-link" href="contact.html">Claim item</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="section" aria-labelledby="table-heading">
+            <h2 id="table-heading">Office Record Table</h2>
+            <div class="data-panel">
+                <table class="items-table">
+                    <caption>Found items currently stored at the Lost &amp; Found office</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Found Location</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Black Backpack</th>
+                            <td>Bag</td>
+                            <td>Library Entrance</td>
+                            <td>2026-05-30</td>
+                            <td>Unclaimed</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Wireless Earbuds</th>
+                            <td>Electronics</td>
+                            <td>Cafeteria</td>
+                            <td>2026-05-29</td>
+                            <td>Unclaimed</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Student ID Card</th>
+                            <td>ID card</td>
+                            <td>Building A hallway</td>
+                            <td>2026-05-28</td>
+                            <td>Ready for pickup</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Key Bundle</th>
+                            <td>Keys</td>
+                            <td>Parking Lot Entrance</td>
+                            <td>2026-05-31</td>
+                            <td>Unclaimed</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Smartphone</th>
+                            <td>Electronics</td>
+                            <td>Library Study Room</td>
+                            <td>2026-06-01</td>
+                            <td>Unclaimed</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Brown Wallet</th>
+                            <td>Personal Item</td>
+                            <td>Cafeteria</td>
+                            <td>2026-06-02</td>
+                            <td>Ready for pickup</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">Bring your Student ID or other proof when claiming an item.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h3>Campus Lost &amp; Found</h3>
+                <p>Helping the Dong-Eui University community recover lost belongings since 2026.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Browse Items</a></li>
+                    <li><a href="report-lost.html">Report Lost</a></li>
+                    <li><a href="report-found.html">Report Found</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Student Affairs Office<br>Building A, Room 101<br><a
+                        href="mailto:lostandfound@deu.ac.kr">lostandfound@deu.ac.kr</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Campus Lost &amp; Found - Dong-Eui University. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <!-- shared sticky header / navigation -->
+    <header>
+        <div class="header-inner">
+            <a class="logo" href="index.html" aria-label="Campus Lost and Found home">
+                <!--Draw logo-->
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                    <circle cx="21" cy="21" r="13" fill="#eaf2ff" stroke="#1a73e8" stroke-width="4" />
+                    <path d="M31 31l9 9" stroke="#e84c1a" stroke-width="5" stroke-linecap="round" />
+                    <circle cx="21" cy="21" r="4" fill="#1a73e8" />
+                </svg>
+                <span>Campus Lost <strong>&amp; Found</strong></span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="listings.html">Items</a></li>
+                    <li><a href="report-lost.html">Report Lost</a></li>
+                    <li><a href="report-found.html">Report Found</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- hero with video background -->
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto">
+                <source src="media/campus.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+
+            <div class="hero-content">
+                <p class="hero-tag">Dong-Eui University Student Service</p>
+                <h1>Recover Lost Items<br>Across Campus</h1>
+                <p class="hero-sub">
+                    Report lost belongings, submit found items, and help students reconnect with their valuables.
+                </p>
+                <div class="hero-buttons">
+                    <a href="report-lost.html" class="btn">Report Lost Item</a>
+                    <a href="report-found.html" class="btn btn-light">Report Found Item</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- about section -->
+        <section class="about">
+            <div class="about-text">
+                <h2>About the System</h2>
+                <p>
+                    The Campus Lost &amp; Found System helps students report lost belongings,
+                    submit found items, and search for missing valuables within the campus
+                    community. It makes recovering lost items simple, quick, and convenient.
+                </p>
+                <ul class="about-list">
+                    <li>Clear lost and found report forms</li>
+                    <li>Item listings for easier matching</li>
+                    <li>Campus office contact information</li>
+                    <li>Responsive design for mobile and desktop</li>
+                </ul>
+            </div>
+
+            <div class="about-card">
+                <h3>Quick Actions</h3>
+                <p>Use the main pages to report, browse, and contact the Lost &amp; Found office.</p>
+                <a href="listings.html">View Items</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h3>Campus Lost &amp; Found</h3>
+                <p>Helping the Dong-Eui University community recover lost belongings since 2026.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Browse Items</a></li>
+                    <li><a href="report-lost.html">Report Lost</a></li>
+                    <li><a href="report-found.html">Report Found</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Student Affairs Office<br>
+                    Building A, Room 101<br>
+                    <a href="mailto:lostandfound@deu.ac.kr">lostandfound@deu.ac.kr</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Campus Lost &amp; Found - Dong-Eui University. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

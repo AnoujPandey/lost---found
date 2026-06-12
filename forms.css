@@ -1,0 +1,191 @@
+/* --- Form Page Wrapper ---
+   Centres the form content and adds spacing. */
+.form-page {
+    max-width: var(--max-width);
+    margin: var(--spacing-lg) auto;
+    padding: 0 var(--spacing-lg);
+}
+.page-title-section h1 { color: var(--color-primary); }
+.page-title-section p  { color: var(--color-muted); max-width: 600px; margin: 0 auto; }
+
+
+/* --- Form Section Card ---
+   Each group of related fields sits inside a white card. */
+.form-section {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing-lg);
+}
+.form-section h2 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+
+/* --- Fieldset & Legend ---
+   Groups related inputs with a visible border and label. */
+fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+legend {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 0 0.5rem;
+}
+
+
+/* --- Form List ---
+   Stacks each label + input pair vertically. */
+.form-list    { list-style: none; display: flex; flex-direction: column; gap: var(--spacing-md); }
+.form-list li { display: flex; flex-direction: column; gap: 0.3rem; }
+
+
+/* --- Labels & Helper Text --- */
+label     { font-size: 0.9rem; font-weight: bold; color: var(--color-ink); }
+.required { color: #dc2626; margin-left: 2px; }  /* red asterisk on required fields */
+small     { font-size: 0.8rem; color: var(--color-muted); }
+
+
+/* --- Input Fields, Textarea, Select ---
+   Consistent styling for all form input types. */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="file"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-ink);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15); /* blue glow on focus */
+}
+textarea { resize: vertical; min-height: 120px; }
+select   { cursor: pointer; }
+
+
+/* --- Radio Buttons & Checkboxes --- */
+.radio-group { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.2rem; }
+.radio-label, .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 1.5;
+}
+.radio-label { align-items: center; }
+.checkbox-item { flex-direction: row !important; align-items: flex-start; }
+.radio-label input[type="radio"],
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--color-primary);
+    flex-shrink: 0;
+}
+.checkbox-label input[type="checkbox"] { margin-top: 3px; }
+
+
+/* --- Form Buttons ---
+   Submit and Clear buttons aligned to the right. */
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+}
+.btn-primary, .btn-secondary {
+    padding: 0.7rem 1.6rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+.btn-primary  { background: var(--color-primary); color: #fff; }
+.btn-primary:hover, .btn-primary:focus   { background: var(--color-primary-dark); transform: translateY(-1px); }
+.btn-secondary { background: var(--color-border); color: var(--color-ink); }
+.btn-secondary:hover, .btn-secondary:focus { background: #b0bbc9; }
+
+
+/* --- Office Info Sidebar ---
+   Contact info cards shown beside the contact form. */
+.office-info { display: flex; flex-direction: column; gap: var(--spacing-md); }
+.info-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: var(--shadow);
+}
+.info-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+
+/* --- Office Hours Table ---
+   Small table inside the sidebar showing opening hours. */
+.info-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.info-table caption { caption-side: top; font-size: 0.8rem; color: var(--color-muted); text-align: left; margin-bottom: 0.4rem; }
+.info-table th, .info-table td { padding: 0.5rem 0.6rem; text-align: left; border: 1px solid var(--color-border); }
+.info-table thead th { background: var(--color-primary); color: #fff; }
+.info-table tbody tr:nth-child(even) { background: var(--color-bg); }
+.info-table tfoot td { font-size: 0.8rem; color: var(--color-muted); font-style: italic; text-align: center; background: var(--color-bg); }
+.info-table a { color: var(--color-primary); text-decoration: none; }
+.info-table a:hover { text-decoration: underline; }
+
+
+/* --- Map & Tips Card --- */
+.map-placeholder { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); }
+.tip-card ul { list-style: disc; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; }
+.tip-card ul li a { color: var(--color-primary); text-decoration: none; }
+.tip-card ul li a:hover { text-decoration: underline; }
+
+
+/* --- Responsive: Mobile (max 768px) ---
+   Stacks form and sidebar, buttons go full width. */
+@media screen and (max-width: 768px) {
+    .header-inner { flex-direction: column; align-items: flex-start; padding: var(--spacing-md); }
+    nav ul { gap: 0.5rem; }
+    .form-page { padding: 0 var(--spacing-md); margin: var(--spacing-md) auto; }
+    .page-title-section h1 { font-size: 1.5rem; }
+    .form-section, fieldset { padding: var(--spacing-md); }
+    .contact-layout { flex-direction: column; }
+    .form-actions { flex-direction: column; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+    .footer-inner { flex-direction: column; }
+}

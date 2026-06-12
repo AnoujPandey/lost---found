@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact - Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/forms.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a class="logo" href="index.html" aria-label="Campus Lost and Found home">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="13" fill="#eaf2ff" stroke="#1a73e8" stroke-width="4"/><path d="M31 31l9 9" stroke="#e84c1a" stroke-width="5" stroke-linecap="round"/><circle cx="21" cy="21" r="4" fill="#1a73e8"/></svg>
+                <span class="logo-text">Campus Lost <strong>&amp; Found</strong></span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Items</a></li>
+                    <li><a href="report-lost.html">Report Lost</a></li>
+                    <li><a href="report-found.html">Report Found</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="form-page">
+
+        <section class="page-title-section">
+            <h1>Contact Us</h1>
+            <p>Have a question or need help with a listing? Reach out to the Lost &amp; Found office or send us a message below.</p>
+        </section>
+
+        <div class="contact-layout">
+
+            <!-- Contact Form -->
+            <section class="form-section contact-form-section">
+                <h2>Send a Message</h2>
+                <form action="#" method="POST" class="report-form">
+
+                    <fieldset>
+                        <legend>Your Details</legend>
+                        <ul class="form-list">
+                            <li>
+                                <label for="contact-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="contact-name" name="name" placeholder="Your full name" required maxlength="100">
+                            </li>
+                            <li>
+                                <label for="contact-email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+                            </li>
+                            <li>
+                                <label for="contact-subject">Subject <span class="required">*</span></label>
+                                <select id="contact-subject" name="subject" required>
+                                    <option value="" disabled selected>-- Select a subject --</option>
+                                    <optgroup label="Lost & Found">
+                                        <option value="claim">I want to claim an item</option>
+                                        <option value="update">Update my listing</option>
+                                        <option value="delete">Remove my listing</option>
+                                    </optgroup>
+                                    <optgroup label="General">
+                                        <option value="question">General question</option>
+                                        <option value="feedback">Feedback / Suggestion</option>
+                                        <option value="other">Other</option>
+                                    </optgroup>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="contact-message">Message <span class="required">*</span></label>
+                                <textarea id="contact-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                            </li>
+                        </ul>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn-secondary">Clear</button>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- Office Info Aside -->
+            <aside class="office-info">
+
+                <div class="info-card">
+                    <h2>Office Information</h2>
+                    <table class="info-table">
+                        <caption>Lost &amp; Found Office Details</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Detail</th>
+                                <th scope="col">Information</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Location</td>
+                                <td>Building A, Room 101</td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td><a href="tel:+825112345678">051-123-4567</a></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><a href="mailto:lostandfound@deu.ac.kr">lostandfound@deu.ac.kr</a></td>
+                            </tr>
+                            <tr>
+                                <td>Mon - Fri</td>
+                                <td>09:00 - 17:00</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>10:00 - 13:00</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>Closed</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Holidays: office may be closed without notice</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="info-card">
+                    <h2>Campus Map</h2>
+                    <!-- Google Maps embed placeholder -->
+                    <div class="map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.5!2d129.063!3d35.179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDong-Eui+University!5e0!3m2!1sen!2skr!4v1"
+                            width="100%"
+                            height="220"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            title="Dong-Eui University Campus Map">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="info-card tip-card">
+                    <h2>Quick Tips</h2>
+                    <ul>
+                        <li>Check the <a href="listings.html">listings page</a> first - your item may already be found.</li>
+                        <li>Bring your Student ID when collecting an item.</li>
+                        <li>Items are kept for a maximum of <strong>30 days</strong>.</li>
+                        <li>For urgent matters call the office directly.</li>
+                    </ul>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h3>Campus Lost &amp; Found</h3>
+                <p>Helping the Dong-Eui University community recover lost belongings since 2026.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Browse Items</a></li>
+                    <li><a href="report-lost.html">Report Lost</a></li>
+                    <li><a href="report-found.html">Report Found</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Student Affairs Office<br>
+                Building A, Room 101<br>
+                <a href="mailto:lostandfound@deu.ac.kr">lostandfound@deu.ac.kr</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Campus Lost &amp; Found - Dong-Eui University. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

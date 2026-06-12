@@ -1,0 +1,697 @@
+/* --- Variables ---
+   Define colours, fonts and sizes once here.
+   Use var(--name) anywhere in this file to apply them. */
+:root {
+    --color-primary: #1a73e8;
+    /* main blue — buttons, links, nav */
+    --color-primary-dark: #1558b0;
+    /* darker blue — hover states */
+    --color-accent: #e84c1a;
+    /* orange-red — notices, markers */
+    --color-ink: #1f2937;
+    /* near-black — body text */
+    --color-muted: #637083;
+    /* grey — captions, subtitles */
+    --color-bg: #f4f7fb;
+    /* light blue-grey — page background */
+    --color-surface: #ffffff;
+    /* white — card backgrounds */
+    --color-border: #d8e0eb;
+    /* light grey — borders and dividers */
+    --color-soft: #eaf2ff;
+    /* very light blue — tags, row highlights */
+    --radius: 8px;
+    /* rounded corners on cards and buttons */
+    --shadow: 0 8px 24px rgba(31, 41, 55, 0.10);
+    /* soft drop shadow */
+    --max-width: 1120px;
+    /* maximum page width */
+    --font-heading: Georgia, "Times New Roman", serif;
+    --font-body: Verdana, Geneva, Tahoma, sans-serif;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+/* * is for all elements in the document */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-ink);
+    background: var(--color-bg);
+}
+
+img,
+video,
+svg,
+iframe {
+    max-width: 100%;
+}
+
+/* makes media scale down on small screens */
+
+a {
+    color: var(--color-primary);
+}
+
+
+/* --- Headings --- */
+h1,
+h2,
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: var(--color-primary-dark);
+    margin: 0 0 1rem;
+}
+
+h2 {
+    font-size: 1.65rem;
+    color: var(--color-primary-dark);
+    margin: 0 0 1rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin: 0 0 0.5rem;
+}
+
+/* --- Header & Navigation ---*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* sits above all page content */
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 3px solid var(--color-primary);
+    box-shadow: 0 2px 10px rgba(31, 41, 55, 0.08);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.45rem 0.7rem;
+    color: var(--color-ink);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: var(--radius);
+    transition: background 0.2s, color 0.2s, transform 0.18s;
+}
+
+nav a:hover,
+nav a:focus,
+nav a.active {
+    color: #fff;
+    background: var(--color-primary);
+}
+
+nav a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(26, 115, 232, 0.25);
+}
+
+nav a.active {
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* --- Page Layout ---
+   Controls section width and the grid column helpers. */
+main {
+    min-height: 70vh;
+}
+
+.section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem;
+}
+
+/* it centers the content and limits the width on large screens, while adding padding on smaller screens */
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+/* base grid class with a gap between items */
+.grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* helper class for three equal columns that shrink on smaller screens */
+.grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* --- Cards & Panels ---
+   Shared white box look used by cards, notices, tables and media panels. */
+.hero-card,
+.card,
+.notice,
+.media-panel,
+.data-panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card {
+    padding: 1.1rem;
+}
+
+.card ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.status-list li::marker {
+    color: var(--color-accent);
+}
+
+/* --- Item Cards (Listings Page) ---
+   Each lost/found item is shown in one of these cards. */
+.item-card {
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-6px);
+    /* card lifts on hover */
+    box-shadow: 0 12px 28px rgba(26, 115, 232, 0.18);
+}
+
+.item-card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    /* crops image to fill space */
+    background: var(--color-soft);
+}
+
+.item-body {
+    padding: 1rem;
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.7rem 0;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.2rem 0.45rem;
+    border-radius: var(--radius);
+    background: var(--color-soft);
+    color: var(--color-primary-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+
+/* --- Hero Card (Inner Pages) ---
+   Large featured image shown on listings and other inner pages. */
+.hero-card {
+    overflow: hidden;
+}
+
+.hero-card picture,
+.hero-card img {
+    display: block;
+    width: 100%;
+}
+
+.hero-card figcaption {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+
+/* --- Buttons ---
+   Primary = solid blue. Secondary = white with border. */
+.btn-primary,
+.btn-secondary,
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background: #fff;
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    border-color: var(--color-primary);
+}
+
+.text-link {
+    padding-inline: 0;
+}
+
+.notice {
+    padding: 1rem;
+    border-left: 5px solid var(--color-accent);
+}
+
+
+/* --- Media Panel ---
+   Two-column layout with video on one side, text on the other. */
+.media-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+.video-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: #0f172a;
+}
+
+.video-frame video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    opacity: 0.92;
+}
+
+
+/* --- Gallery ---
+   Four-column image grid on the listings page. */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.gallery a {
+    display: block;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background: #fff;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* square images */
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.gallery a:hover img,
+.gallery a:focus img {
+    transform: scale(1.04);
+}
+
+
+/* --- Items Table ---
+   Scrollable table of lost and found records. */
+.data-panel {
+    overflow-x: auto;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* removes gaps between cells */
+    min-width: 680px;
+    background: #fff;
+}
+
+.items-table caption {
+    caption-side: top;
+    padding: 0.75rem;
+    color: var(--color-muted);
+    text-align: left;
+    font-weight: 700;
+}
+
+/* table title above the table, styled as a caption */
+.items-table th,
+.items-table td {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.items-table thead th {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.items-table tbody tr:nth-child(even) {
+    background: #f8fbff;
+}
+
+/* alternating row shading */
+.items-table tfoot td {
+    background: var(--color-soft);
+    color: var(--color-muted);
+    font-style: italic;
+}
+
+/* --- Page Title Section ---
+   Centred title block at the top of inner pages. */
+.page-title-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-title-section h1 {
+    font-size: 2.25rem;
+}
+
+
+/* --- HOME PAGE HERO (index.html only) ---
+   Full-screen video hero section shown only on the home page. */
+.hero {
+    position: relative;
+    min-height: 88vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/*displays the video as a full-background element that fills the hero section, while the overlay and content sit on top of it */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    /* dark overlay on video to make content more readable */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* sits on top of video and overlay */
+    max-width: 850px;
+    padding: 0 60px;
+    color: white;
+}
+
+.hero-tag {
+    margin-bottom: 14px;
+    color: #93c5fd;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero-sub {
+    max-width: 650px;
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    color: #e2e8f0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* button styles for the hero section, with hover effects */
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: #1a73e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.25s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #1558b0;
+    transform: translateY(-4px);
+}
+
+.btn-light {
+    background: white;
+    color: #1a73e8;
+}
+
+.btn-light:hover {
+    background: #eaf2ff;
+    color: #1558b0;
+}
+
+
+/* --- About Section (index.html only) ---
+   Two-column info block below the hero on the home page. */
+.about {
+    width: 88%;
+    max-width: 1100px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.about-text,
+.about-card {
+    background: white;
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about h2,
+.about h3 {
+    color: #1a73e8;
+    margin-bottom: 15px;
+}
+
+.about p {
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-list {
+    margin-top: 18px;
+    padding-left: 20px;
+    line-height: 1.9;
+}
+
+.about-card a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1a73e8;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.about-card a:hover {
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+/* --- Footer --- Dark three-column footer shown on all pages. */
+footer {
+    margin-top: 2rem;
+    padding: 2rem 1.5rem 1rem;
+    background: var(--color-ink);
+    color: #d7dee9;
+}
+
+/* displays footer content in three columns, with the middle column narrower than the others */
+.footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 1.5rem;
+}
+
+.footer-col h3 {
+    color: #fff;
+}
+
+.footer-col ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-col a {
+    color: #9cc7ff;
+    text-decoration: none;
+}
+
+.footer-col a:hover,
+.footer-col a:focus {
+    text-decoration: underline;
+}
+
+/* bottom bar with copyright and credits */
+.footer-bottom {
+    max-width: var(--max-width);
+    margin: 1.25rem auto 0;
+    padding-top: 1rem;
+    border-top: 1px solid #3f4a5d;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #aeb8c7;
+}
+
+
+/* --- Responsive: Tablet (max 860px)  and mobile (max 560px) ---
+   Adjusts multi-column layouts into single columns for  smaller screens. */
+/* Responsive Design */
+@media (max-width: 860px) {
+
+    /* Stack layouts into a single column on smaller screens */
+    .header-inner,
+    .hero-inner,
+    .media-panel,
+    .footer-inner,
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce multi-column grids to two columns */
+    .grid-2,
+    .grid-3,
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content {
+        padding: 40px 24px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-sub {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .grid-2,
+    .grid-3,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    /* Make navigation links and buttons full width */
+    nav a,
+    .btn,
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+}

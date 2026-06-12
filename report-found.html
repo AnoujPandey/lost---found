@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Report Found Item - Campus Lost &amp; Found</title>
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/forms.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header>
+        <div class="header-inner">
+            <a class="logo" href="index.html" aria-label="Campus Lost and Found home">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                    <circle cx="21" cy="21" r="13" fill="#eaf2ff" stroke="#1a73e8" stroke-width="4" />
+                    <path d="M31 31l9 9" stroke="#e84c1a" stroke-width="5" stroke-linecap="round" />
+                    <circle cx="21" cy="21" r="4" fill="#1a73e8" />
+                </svg>
+                <span>Campus Lost <strong>&amp; Found</strong></span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Items</a></li>
+                    <li><a href="report-lost.html">Report Lost</a></li>
+                    <li><a href="report-found.html" class="active">Report Found</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="form-page">
+        <section class="page-title-section">
+            <h1>Report a Found Item</h1>
+            <p>Thank you for helping another student. Submit details so campus staff can match the item with its owner.
+            </p>
+        </section>
+
+        <section class="form-section">
+            <form action="#" method="POST" enctype="multipart/form-data" class="report-form">
+                <fieldset>
+                    <legend>Finder Information</legend>
+                    <ul class="form-list">
+                        <li>
+                            <label for="finder-name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="finder-name" name="finder_name" placeholder="e.g. Topendra Dada"
+                                required maxlength="100">
+                        </li>
+                        <li>
+                            <label for="finder-email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="finder-email" name="finder_email"
+                                placeholder="e.g. student@example.com" required>
+                        </li>
+                        <li>
+                            <label for="finder-phone">Contact Number</label>
+                            <input type="tel" id="finder-phone" name="finder_phone" placeholder="e.g. 010-1234-5678">
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Found Item Details</legend>
+                    <ul class="form-list">
+                        <li>
+                            <label for="found-item-name">Item Name <span class="required">*</span></label>
+                            <input type="text" id="found-item-name" name="item_name" placeholder="e.g. Blue Umbrella"
+                                required maxlength="100">
+                        </li>
+                        <li>
+                            <label for="found-category">Item Category <span class="required">*</span></label>
+                            <select id="found-category" name="category" required>
+                                <option value="" disabled selected>-- Select a category --</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="id-card">ID Card / Student Card</option>
+                                <option value="bag">Backpack / Bag</option>
+                                <option value="clothing">Clothing / Umbrella</option>
+                                <option value="books">Books / Stationery</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="storage-location">Where is the item now? <span class="required">*</span></label>
+                            <select id="storage-location" name="storage_location" required>
+                                <option value="" disabled selected>-- Select current location --</option>
+                                <option value="office">Given to Lost &amp; Found Office</option>
+                                <option value="security">Given to Security Office</option>
+                                <option value="with-me">Currently with me</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="found-description">Description <span class="required">*</span></label>
+                            <textarea id="found-description" name="description" rows="5"
+                                placeholder="Describe color, brand, condition, and any unique details."
+                                required></textarea>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Where &amp; When Found</legend>
+                    <ul class="form-list">
+                        <li>
+                            <label for="date-found">Date Found <span class="required">*</span></label>
+                            <input type="date" id="date-found" name="date_found" required>
+                        </li>
+                        <li>
+                            <label for="found-location">Location Found <span class="required">*</span></label>
+                            <input type="text" id="found-location" name="location"
+                                placeholder="e.g. Cafeteria table near entrance" required maxlength="200">
+                        </li>
+                        <li>
+                            <label for="campus-zone">Campus Zone</label>
+                            <select id="campus-zone" name="campus_zone" size="4">
+                                <option value="classroom">Classroom / Lecture Hall</option>
+                                <option value="library">Library</option>
+                                <option value="cafeteria">Cafeteria</option>
+                                <option value="outdoor">Outdoor Campus Grounds</option>
+                                <option value="office">Administrative Office</option>
+                            </select>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Photo &amp; Confirmation</legend>
+                    <ul class="form-list">
+                        <li>
+                            <label for="found-image">Upload Item Image</label>
+                            <input type="file" id="found-image" name="image" accept="image/*">
+                            <small>Optional. A clear photo helps the owner identify the item.</small>
+                        </li>
+                        <li class="checkbox-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="safe_handling" value="yes" required>
+                                I confirm that I will hand the item to campus staff or keep it safe until contacted.
+                                <span class="required">*</span>
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn-secondary">Clear Form</button>
+                    <button type="submit" class="btn-primary">Submit Found Item Report</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h3>Campus Lost &amp; Found</h3>
+                <p>Helping the Dong-Eui University community recover lost belongings since 2026.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listings.html">Browse Items</a></li>
+                    <li><a href="report-lost.html">Report Lost</a></li>
+                    <li><a href="report-found.html">Report Found</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Student Affairs Office<br>Building A, Room 101<br><a
+                        href="mailto:lostandfound@deu.ac.kr">lostandfound@deu.ac.kr</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Campus Lost &amp; Found - Dong-Eui University. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
